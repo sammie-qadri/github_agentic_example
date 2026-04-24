@@ -72,3 +72,10 @@ Category: rule
 What happened: The first website pass was functional, but the follow-up requirement made it clear that a generic section-and-card layout was not enough for a repo whose main value is orchestration flow and askQuestions behavior.
 Root cause: I translated the information architecture too literally instead of making the interaction model itself reflect the system being demonstrated.
 Rule going forward: For showcase frontends, make at least one central interaction embody the product's core behavior, and use the layout to express the system's logic rather than only listing its parts.
+
+## 2026-04-24 - Pages workflows should not assume repository Pages is pre-enabled
+
+Category: rule
+What happened: The first public GitHub Pages deployment failed even though the app build succeeded, because the workflow called `actions/configure-pages` without enabling Pages for a brand-new repository.
+Root cause: I optimized for an already-configured repo instead of accounting for first-run setup in a freshly created public repository.
+Rule going forward: For new public repos that deploy with GitHub Pages Actions, configure the workflow to enable Pages automatically so first deployment succeeds without manual settings changes.
