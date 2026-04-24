@@ -1,0 +1,17 @@
+# Node dependencies
+node_modules/
+
+# Next.js build outputs
+.next/
+out/
+tsconfig.tsbuildinfo
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# System/editor artifacts
+.DS_Store
+.vscode/
