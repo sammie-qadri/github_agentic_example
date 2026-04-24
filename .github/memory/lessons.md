@@ -79,3 +79,10 @@ Category: rule
 What happened: The first public GitHub Pages deployment failed even though the app build succeeded, because the workflow called `actions/configure-pages` without enabling Pages for a brand-new repository.
 Root cause: I optimized for an already-configured repo instead of accounting for first-run setup in a freshly created public repository.
 Rule going forward: For new public repos that deploy with GitHub Pages Actions, configure the workflow to enable Pages automatically so first deployment succeeds without manual settings changes.
+
+## 2026-04-24 - Public repos should have one authoritative Pages workflow
+
+Category: rule
+What happened: The repository ended up with both a custom Pages workflow and the GitHub template workflow, which made deployment intent harder to reason about during public-repo setup.
+Root cause: I layered improvements onto an existing deploy workflow before consolidating around a single source of truth for Pages deployment.
+Rule going forward: When a repo gains an official or user-approved deployment workflow, merge hardening steps into that file and delete duplicates immediately so Actions behavior stays obvious.

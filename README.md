@@ -223,7 +223,7 @@ The static output is generated in `out/`.
 
 ### GitHub Pages deployment
 
-Deployment is automated by [`.github/workflows/deploy-pages.yml`](/.github/workflows/deploy-pages.yml):
+Deployment is automated by [`.github/workflows/nextjs.yml`](/.github/workflows/nextjs.yml):
 
 1. Trigger on push to `main` (or run manually via `workflow_dispatch`).
 2. Install dependencies with `npm ci`.
